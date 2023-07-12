@@ -1,12 +1,19 @@
 const http = require("http")
 http.createServer((req, res) => {
   var path = req.url.toLowerCase();
+  console.log(path)
   switch (path) {
     case '/':
       res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.end("This is my home page")
       break;
     case '/about':
       res.writeHead(200, { 'Content-Type': 'text/plain' });
-      res.end('Not found');
+      res.end('I am a studet at SCC');
       break;
-  }).listen(process.env.PORT || 3000);
+    default:
+      res.writeHead(404, { 'Content-Type': 'text/plain' });
+      res.end('Not foud');
+      break;
+  }
+ }).listen(process.env.PORT || 3000);
