@@ -1,4 +1,4 @@
-const http = require("http")
+import express from 'express';
 http.createServer((req, res) => {
   var path = req.url.toLowerCase();
   console.log(path)
@@ -16,4 +16,4 @@ http.createServer((req, res) => {
       res.end('Not found');
       break;
   }
- }).listen(process.env.PORT || 3000);
+}).listen(process.env.PORT || 3000);
